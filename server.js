@@ -52,8 +52,8 @@ io.on('connection', function(socket){
     // Promise handler.
     socket.on("website", (address) => {
         scrapeProduct(address).then((result) => {
-            socket.emit("emails", result);
-            socket.emit("phone", result)
+            socket.emit("emails", result[0]);
+            socket.emit("phone", result[1])
             console.log(result);
         });
         console.log(address);
