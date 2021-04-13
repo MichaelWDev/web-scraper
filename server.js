@@ -13,14 +13,19 @@ async function scrapeProduct(url) {
     const txt1  = await el1.getProperty('textContent');
     const text  = await txt1.jsonValue();
     let email   = getEmail(text);
+    let phone   = getPhone(text);
     browser.close();
-    console.log(email);
+    console.log("Email: " + email, "Phone #: " + phone);
     return email;
 }
 
 // Finds the email using REGEX.
-function getEmail (text) {
+function getEmail(text) {
     return text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);
+}
+
+function getPhone(text) {
+    return text.match(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g);
 }
 
 
