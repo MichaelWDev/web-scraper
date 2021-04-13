@@ -23,7 +23,7 @@ function getEmail(text) {
 }
 
 function getPhone(text) {
-    return text.match(/[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*/gi);
+    return text.match(/\(?[0-9]{3}.{0,2}[0-9]{3}.?[0-9]{4}/gm);
 }
 
 
