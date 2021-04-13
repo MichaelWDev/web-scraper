@@ -16,7 +16,7 @@ async function scrapeProduct(url) {
     let phone   = getPhone(text);
     browser.close();
     console.log("Email: " + email, "Phone #: " + phone);
-    return email;
+    return email, phone;
 }
 
 // Finds the email using REGEX.
