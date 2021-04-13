@@ -1,0 +1,28 @@
+{
+  "name": "web-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes data from a website.",
+  "main": "server.js",
+  "scripts": {
+    "test": "start",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesRBDev/web-scraper.git"
+  },
+  "keywords": [
+    "scraper"
+  ],
+  "author": "Michael Woodyard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesRBDev/web-scraper/issues"
+  },
+  "homepage": "https://github.com/JamesRBDev/web-scraper#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "puppeteer": "^8.0.0",
+    "socket.io": "^4.0.1"
+  }
+}
