@@ -19,7 +19,7 @@ async function scrapeProduct(url) {
 
 // Finds the email using REGEX.
 function getEmail(text) {
-    return text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);
+    return text.match(/\w+@\w+\.\w{1,3}/gm);
 }
 
 function getPhone(text) {
