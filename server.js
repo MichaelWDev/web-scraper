@@ -54,6 +54,7 @@ io.on('connection', function(socket){
         scrapeProduct(address).then((result1, result2) => {
             socket.emit("emails", result1);
             socket.emit("phone", result2)
+            console.log(result1, result2)
         });
         console.log(address);
     });
