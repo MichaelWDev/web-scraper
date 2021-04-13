@@ -14,7 +14,7 @@ async function scrapeProduct(url) {
     let phone   = getPhone(text);
     browser.close();
     console.log("Email: " + email, "Phone #: " + phone);
-    return email, phone;
+    return [email, phone];
 }
 
 // Finds the email using REGEX.
@@ -51,10 +51,10 @@ io.on('connection', function(socket){
 
     // Promise handler.
     socket.on("website", (address) => {
-        scrapeProduct(address).then((result1, result2) => {
-            socket.emit("emails", result1);
-            socket.emit("phone", result2)
-            console.log(result1, result2)
+        scrapeProduct(address).then((result) => {
+            socket.emit("emails", result);
+            socket.emit("phone", result)
+            console.log(result);
         });
         console.log(address);
     });
