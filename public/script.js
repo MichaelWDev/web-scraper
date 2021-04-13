@@ -29,4 +29,4 @@ function receivePhone(phones) {
 }
 
 socket.on("emails", receiveEmail);
-socket.on("phones", receivePhone);
+socket.on("phone", receivePhone);
