@@ -19,7 +19,7 @@ function receiveEmail(emails) {
 
 // Receives the phone numbers.
 function receivePhone(phones) {
-        // Displays the email client-side.
+    // Displays the email client-side.
     for(let i = 0; i < phones.length; i++){
         let phone = document.createElement("p");
         phone.innerText = phones[i];
@@ -29,4 +29,4 @@ function receivePhone(phones) {
 }
 
 socket.on("emails", receiveEmail);
-socket.on("phone", receivePhone);
+socket.on("phones", receivePhone);
