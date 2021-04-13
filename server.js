@@ -1,8 +1,6 @@
 // Runs the scraper.
 const puppeteer = require('puppeteer');
 
-// TODO: Get phone numbers.
-
 async function scrapeProduct(url) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -53,8 +51,9 @@ io.on('connection', function(socket){
 
     // Promise handler.
     socket.on("website", (address) => {
-        scrapeProduct(address).then((result) => {
-            socket.emit("emails", result);
+        scrapeProduct(address).then((result1, result2) => {
+            socket.emit("emails", result1);
+            socket.emit("phone", result2)
         });
         console.log(address);
     });
